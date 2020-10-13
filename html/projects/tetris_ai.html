@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <title>Anirudh Lakra</title>
+        <meta name="Website" content="Anirudh Lakra's website">
+        <meta name="Author" content="Anirudh Lakra">
+        <meta charset="UTF-8">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../../css/project_post_style.css">
+    </head>
+    <body>
+        <header class="menu">
+            <h1>Anirudh Lakra</h1>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="../blog/blogs.html">Blog</a></li>
+                <li><a href="../experiences/experiences.html">Experience</a></li>
+                <li><a href="../../AnirudhLakraCV.pdf">CV</a></li>
+            </ul>
+        </header>
+        <div id="title">
+            <h2>Tetris AI</h2>
+            <p>11/2019</p>
+        </div>
+        <div id="content">
+            <p>As part of my Design and Professional skills module, I was assigned to build an AI that can 
+                play Tetris without any help from the user. This was a challenge for me as I had just started programming 
+                and had no experience with any AI or Machine learning algorithms.
+            </p>
+            <p>The hardest part was getting started. I had no clue what to do. After pondering for some time, I decided on a simple 
+                yet effective approach. My approach is as follows:
+                <ul>
+                    <li>1) My AI would first clone the current board and try out a move in the cloned board.</li>
+                    <li>2) The AI would score the cloned board using heuristics that I would assign before running the AI.</li>
+                    <li>3) Repeat steps 1 - 2 for all possible moves and cloning the board each time.</li>
+                    <li>4) Once all moves have been executed, take the lowest scoring move (lowest score = best board) and execute it on the real board.</li>
+                </ul>
+            </p>
+            <p>While I was implementing the algorithm above, I came across another major problem. I didn't have any idea on what the 
+                heuristics should be and how they would tie together to give the final score. The heuristics I decided to use were aggregate height 
+                (combined height of blocks in each column), holes and bumpiness (difference in heights of successive columns). Now the problem is assigning 
+                weights to each heuristic. 
+            </p>
+            <p>I tried the most time consuming approach first, I used trial and error with different values to try and maximise the time my AI could play. 
+                After a lot of wasted hours, I decided to use a more mathematical approach. Realising that holes become more and more important as you get more of them 
+                I decided to use holes squared. This meant when you have a low amount of holes, they don't really impact the final score but as you get to higher numbers 
+                they quickly become the dominating factor in the score. Aggregate height and bumpiness were linear functions so they grew at a constant rate. 
+                For aggregate height I used aggregate height * 100 and for bumpiness I used bumpiness * 47.
+            </p>
+            <p>The equation for the score was = holes^2 + bumpiness*47 + aggregate_height*100.</p>
+            <p>In hindsight, if I could redo this project I would use a genetic algorithm rather than trial and error to generate the weightings. In addition, I would structure 
+                my code better and make it so that my AI would score moves that are 2 moves ahead rather than just the next move. This would allow the AI to predict the best scoring board 
+                up to 2 moves away and allow it to run longer.
+            </p>
+            <p>Link to this project is <a href="https://github.com/anirudh1666/Python/blob/master/Projects/Tetris_AI_CW/player.py">here.</a></p>
+        </div>
+        <div class="footer">
+            <a href="https://github.com/anirudh1666">
+                <img src="../../images/github_img.png" width="90" height="50">
+            </a>
+            <a href="https://www.linkedin.com/in/anirudh-lakra-217b75194/">
+                <img src="../../images/linkedin_img.png" width="60" height="60">
+            </a>
+            <p>Copyright © 2020 Anirudh Lakra. All Rights Reserved.</p>
+        </div>
+    </body>
+</html>
