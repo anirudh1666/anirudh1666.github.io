@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Anirudh Lakra</title>
+        <meta name="Website" content="Anirudh Lakra's website">
+        <meta name="Author" content="Anirudh Lakra">
+        <meta charset="UTF-8">
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../../css/project_post_style.css">
+    </head>
+    <body>
+        <header class="menu">
+            <h1>Anirudh Lakra</h1>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="../blog/blogs.html">Blog</a></li>
+                <li><a href="../experiences/experiences.html">Experience</a></li>
+                <li><a href="../../AnirudhLakraCV.pdf">CV</a></li>
+            </ul>
+        </header>
+        <div id="title">
+            <h2>JSH</h2>
+            <p>10/2020-12/2020</p>
+        </div>
+        <div id="content">
+            <p>As part of our Sotware Engineering module, I was assigned to a group of 3 and tasked to refactor and extend an existing implementation of
+               a Java shell called JSH. The previous version contained only one class called JSH which did parsing and could execute only a few applications such as 
+               ls, echo, head, tail etc. 
+            </p>
+            <p>The first thing our group discussed was about what development style we were going to use. We settled on using Agile development where we would hold meetings 
+                every Sunday to discuss what we had implemented in the previous six days and if there were any issues. We then would plan the next week and made sure that by next sunday 
+                we had a working prototype. We continued this cycle every week until we had completed it.
+            </p>
+            <p>The next main thing we focused on was refactoring. The previous JSH had very bad code design since it had only one class that did everything. It also implemented no 
+                design patterns either. So first we partitioned the existing code into different classes and came up with a class structure. JSH would be the main class that runs the code. 
+                OurParser handles all parsing and command substitution. We decided to make a super class called Visitable and each application (such as ls, echo, head, tail etc) would extend 
+                this superclass. The reason we called it Visitable is because we decided to use the Visitor design pattern here. We also created another class called Call which would basically 
+                use the Factory design pattern to create the application object then by using dynamic dispatch we can call visit on the application object without knowing its type. VisitorApplication holds
+                the implementations of each application. 
+            </p>
+            <p>After refactoring, we added more functionality to JSH. We added command substitution, redirection, piping and a few more applications such as cut. This was a lot easier than refactoring as 
+                it was completely new code so we could write it in our own style while also being able to focus on just implementing the feature rather than worry about how it would impact the design pattern. 
+                While doing this I learnt more about functional Java programming. In particular, I gained some experience using streams. Streams are a higher level abstraction of for loops and helped us tidy up messy long loops 
+                into single line statements that would call a method on each stream element. This made the code a lot more readable. 
+            </p>
+            <p>Throughout this project, I was introduced to new software engineering practices such as Test Driven Development(TDD) and Agile while also becoming more familiar with 
+                technologies that are used in the software engineering industry. Some of these technologies are Docker and Git. I also learnt about various debugging techniques such as 
+                delta debugging and using Visual Studio Code's inbuilt debugging tool. 
+            </p>
+            <p>The hardest part about this project was learning how the visitor design pattern would fit in. Previously, I had never used any design patterns in my code so it took me a while to 
+                learn about it in depth and apply it to JSH. Our finished version used several design patterns such as Visitor and Factory while also implementing some more functionality (for example 
+                command substitution) into JSH.
+            </p>
+            <p>Link to this project is <a href=""></a></p>
+        </div>
+        <div class="footer">
+            <a href="https://github.com/anirudh1666">
+                <img src="../../images/github_img.png" width="90" height="50">
+            </a>
+            <a href="https://www.linkedin.com/in/anirudh-lakra-217b75194/">
+                <img src="../../images/linkedin_img.png" width="60" height="60">
+            </a>
+            <p>Copyright © 2020 Anirudh Lakra. All Rights Reserved.</p>
+        </div>
+    </body>
+</html>
